@@ -1,7 +1,9 @@
 <template>
-    <div class="listingFeed pos--rel">
+    <section class="listingFeed pos--rel">
+			<ListingType />
+			<ListingGrid />
    
-    </div>
+		</Section>
   </template>
   
   <script>
@@ -13,7 +15,6 @@
   <style lang="scss">
   .listingFeed {
 		width: 100%;
-		background: red;
 		height: 100%;
     
   }

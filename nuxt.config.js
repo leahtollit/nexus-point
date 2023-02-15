@@ -24,7 +24,11 @@ export default {
       { property: 'og:site_name', content: meta.data.siteName },
       { hid: 'og:image', property: 'og:image', content: meta.data.socialCard }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet',  href: 'https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap' }
+
+  ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

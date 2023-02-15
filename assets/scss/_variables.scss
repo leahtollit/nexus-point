@@ -1,11 +1,11 @@
 // fixed values
 $bg: #FFFFFF;
-$black: #131319;
+$black: #000000;
 $white: #fff;
 
 $greyDarker: #1c1c22;
 $greyDark: #424247;
-$grey:  #3F3A50;
+$grey:  #55595D;
 $greyLight: #8e8e91;
 $greyLighter: #F6F7FB;
 $greyLightest: #e2e2e6;
@@ -14,7 +14,7 @@ $orange: #ffa700;
 $orangeDark: #d88e01;
 $blue: #0062ff;
 $blueDark: #282338;
-$purple: #c152fc;
+$purple: #7572FF;
 $purpleDark: #9b46c9;
 $green: #1cce90;
 $greenDark: #18ac78;
@@ -66,7 +66,8 @@ $success: $green;
 
 $fontcolors: (
   'black': var(--black),
-  'white': $white
+  'white': $white,
+  'grey': $grey
 );
 
 $bgcolors: (
@@ -94,12 +95,13 @@ $containerPadding: (
 /* ---------------------------------------- */
 
 // fonts
+ 
 $sans: 'Arial', sans-serif;
 $serif: 'Times New Roman', serif;
 
 $fontFamilies: (
   'sans': $sans,
-  'serif': $serif
+  'serif': $serif,
 );
 
 $fontSizes: (12, 14, 16, 18, 20);
