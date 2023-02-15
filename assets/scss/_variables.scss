@@ -1,19 +1,19 @@
 // fixed values
-$bg: #ececf0;
+$bg: #FFFFFF;
 $black: #131319;
 $white: #fff;
 
 $greyDarker: #1c1c22;
 $greyDark: #424247;
-$grey: #424247;
+$grey:  #3F3A50;
 $greyLight: #8e8e91;
-$greyLighter: #d4d4d8;
+$greyLighter: #F6F7FB;
 $greyLightest: #e2e2e6;
 
 $orange: #ffa700;
 $orangeDark: #d88e01;
 $blue: #0062ff;
-$blueDark: #004bc4;
+$blueDark: #282338;
 $purple: #c152fc;
 $purpleDark: #9b46c9;
 $green: #1cce90;
@@ -87,9 +87,9 @@ $containers: (
 );
 $containerPadding: (
   'sssl': 88,
-  'xxxl': 40,
-  'l': 32,
-  'xs': 24
+  'xxxl': 32,
+  'l': 50,
+  'xs': 13
 );
 /* ---------------------------------------- */
 

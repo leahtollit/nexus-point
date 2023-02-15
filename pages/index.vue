@@ -1,8 +1,10 @@
 <template>
   <main class="theContent">
+    <FinanceBanner />
+    <SearchMain />
     <!-- FirebaseTest -->
     <!-- Web3Test -->
-    <!-- BuilderBase -->
+    <!-- <BuilderBase /> -->
   </main>
 </template>
 

@@ -1,9 +1,8 @@
 <template>
   <footer class="globalFooter">
-    <div class="globalFooter__container container">
-      <NuxtLink to="/" class="globalFooter__logo">Logo</NuxtLink>
-      <p>All Rights Reserved © PLEASE CHANGE ME {{ new Date().getFullYear() }}</p>
-    </div>
+    <div class="globalFooter__main"></div>
+    <div class="globalFooter__companyInfo"></div>
+
   </footer>
 </template>
 
@@ -15,8 +14,19 @@ export default {
 
 <style lang="scss">
 .globalFooter {
-  padding: 20px 0;
-  margin: 40px 0 0;
-  background: var(--white);
+
+  &__main {
+    background: var(--blueDark);
+    height: 396px;
+    border-radius: 0px 50px 0px 0;
+  }
+
+  &__companyInfo {
+    background: var(--grey);
+    height: 199px;
+
+  }
+
 }
 </style>
+
