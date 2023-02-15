@@ -1,5 +1,5 @@
 <template>
-    <div class="searchSidebar pos--rel">
+    <div class="searchSidebar pos--sticky">
    
     </div>
   </template>
@@ -13,12 +13,10 @@
   <style lang="scss">
   .searchSidebar {
 		background: var(--greyLighter);
-		width: 100%;
-		height: 100%;
-		// left: 0;
-		// top: 0;
-		// display: block;
-    
+		width: 298px;
+    height: 100%;
+    top: 0;
+
   }
   </style>
   

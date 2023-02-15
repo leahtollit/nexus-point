@@ -67,7 +67,8 @@ $success: $green;
 $fontcolors: (
   'black': var(--black),
   'white': $white,
-  'grey': $grey
+  'grey': $grey,
+  'purple': $purple
 );
 
 $bgcolors: (
@@ -87,7 +88,7 @@ $containers: (
   'medium': 1400
 );
 $containerPadding: (
-  'sssl': 88,
+  'sssl': 32,
   'xxxl': 32,
   'l': 50,
   'xs': 13
@@ -106,7 +107,7 @@ $fontFamilies: (
 
 $fontSizes: (12, 14, 16, 18, 20);
 $fontWeights: (300, 600, 700);
-$lineHeights: (120, 140, 160, 180);
+$lineHeights: (120, 140, 150, 160, 180);
 $letterSpacing: (
   't20': -0.02,
   't10': -0.01,

@@ -1,7 +1,7 @@
 <template>
-    <button class="baseTag pos--rel ta--center buttonReset">
-      <p class="baseTag__label fs--16 fw--400 fc--white"><slot /></p>
-    </button>
+    <div class="baseTag pos--rel">
+      <p class="baseTag__label fs--16 fw--600 fc--white"><slot /></p>
+    </div>
   </template>
   
   <script>
@@ -37,21 +37,17 @@
   
   <style lang="scss">
   .baseTag {
-    background: $purple;
-    border-radius: 12px;
-    padding: 3px 25px;
+    background: #3F3A50;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 8px; 
+    padding: 1px 10px;
 
-		&__label {
-			line-height: 24px;
-		}
 
-    &--disabled {
-      border: 1px solid #D1D6E0;
-
-      .baseTag__label {
-        color: $grey;
-      }
+    &__label {
+      line-height: 27px;
     }
+
   }
   </style>
   
