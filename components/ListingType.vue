@@ -136,6 +136,10 @@
 			line-height: 24px;
 			margin-right: 14px;
 		}
+
+		&__tagList {
+			padding: 0;
+		}
   }
 
 	//----------------------------------------//

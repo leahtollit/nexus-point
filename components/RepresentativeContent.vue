@@ -186,21 +186,9 @@
 
 
   }
-
 	//----------------------------------------//
-// 1080
+  // 1080
 @include breakpoint(xl) {
-  .representativeContent {
-
-		&__item {
-			width: calc(25% - 15px);
-		}
-	}
-}
-
-	//----------------------------------------//
-  // 960
-@include breakpoint(l) {
   .representativeContent {
 
 		&__tabs {
