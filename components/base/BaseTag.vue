@@ -1,10 +1,10 @@
 <template>
-    <div class="baseTag pos--rel">
-      <p class="baseTag__label fs--16 fw--600 fc--white"><slot /></p>
-    </div>
-  </template>
+  <div class="baseTag pos--rel">
+    <p class="baseTag__label fs--16 fw--600 fc--white"><slot /></p>
+  </div>
+</template>
   
-  <script>
+<script>
   export default {
     name: 'BaseTag',
     props: {
@@ -33,9 +33,9 @@
       }
     }
   }
-  </script>
+</script>
   
-  <style lang="scss">
+<style lang="scss">
   .baseTag {
     background: #3F3A50;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,5 +49,19 @@
     }
 
   }
-  </style>
+
+  //----------------------------------------//
+  // 500
+  @include breakpoint(xs) {
+    .baseTag {
+
+      &__label {
+        font-weight:400;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+    }
+  }
+</style>
   

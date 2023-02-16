@@ -24,9 +24,22 @@ export default {
   &__companyInfo {
     background: var(--grey);
     height: 199px;
-
   }
 
+}
+
+//----------------------------------------//
+// 500
+@include breakpoint(xs) {
+  .globalFooter {
+		&__main {
+      height: 289px;
+    }
+
+    &__companyInfo {
+      height: 252px;
+    }
+	}
 }
 </style>
 

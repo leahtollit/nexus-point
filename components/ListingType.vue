@@ -145,6 +145,23 @@
 		&__tagList {
 			display: none;
 		}
+
+		&__heading {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 21px;
+		}
+
+		&__filter {
+			background: none;
+			padding: 0;
+		}
+
+		&__filterLabel {
+			color: $black;
+			font-size: 14px;
+			line-height: 21px;
+		}
 	}
 }
   </style>

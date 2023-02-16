@@ -3,6 +3,7 @@
 		<div class="listingGrid__container flex justifyC--between alignI--center">
 			<BaseCard v-for="(el, i) in pagedCards" :key="el + i"
         :image="el.image"
+				:image_carousel="el.image_carousel"
         :header="el.header"  
 				:subheading="el.subheading"
 				:advert_classification="el.advert_classification"
@@ -17,7 +18,7 @@
 			</div>
 			<div class="listingGrid__nav flex alignI--center justifyC--between">
 				<button class="listingGrid__backBtn fc--grey fs--16 fw--400" @click.prevent="scrollToElement('#listings')">Back to top</button>
-				<div class="listingGrid__pageNav">
+				<div class="listingGrid__pageNav flex">
 					<button @click="showLess()" class="listingGrid__pageNavItem listingGrid__pageNavItem--prev">
 						<CaretIcon class="listingGrid__caret listingGrid__caret--left"/>
 					</button>
@@ -67,6 +68,17 @@
 						price_per_month: '£550.90',
 						price: '£23,300',
 						advert_classification: 'Used',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						image: '/images/thumbnails/car-one.jpg',
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
@@ -78,6 +90,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -91,6 +114,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -101,6 +135,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -111,6 +156,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
 					{
@@ -120,6 +176,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -132,6 +199,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -142,6 +220,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -152,6 +241,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -162,6 +262,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -172,6 +283,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -184,6 +306,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -194,6 +327,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -204,6 +348,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -217,6 +372,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -227,6 +393,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -237,6 +414,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
 					{
@@ -246,6 +434,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -258,6 +457,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -268,6 +478,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -278,6 +499,17 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
@@ -288,6 +520,17 @@
 						price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-one.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-one.jpg'
+							}
+						],
 						calculate_label: 'calculate',
 						tags: [ '32k miles', 'Hybrid', 'Manual', 'SUV']
           },
@@ -298,11 +541,22 @@
 						price: '£23,300',
 						advert_classification: 'New',
 						image: '/images/thumbnails/car-two.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-two.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ 'Petrol', 'Automatic', 'Hatchback']
           },
 					{
-            header: '2019 (19) Renault Zoe end',
+            			header: '2019 (19) Renault Zoe end',
 						subheading: 'i R135 Rapid Charge ZE50',
 						price_per_month: '£550.90',
 						price: '£23,300',
@@ -310,6 +564,17 @@
 						new_price: '£23,300',
 						advert_classification: 'Used',
 						image: '/images/thumbnails/car-three.jpg',
+						image_carousel: [ 
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							},
+							{
+								image: '/images/thumbnails/car-three.jpg'
+							}
+						],
 						calculate_label: 'calculate finance',
 						tags: [ '325 miles', 'EV', 'Automatic', 'Hatchback']
           },
@@ -330,6 +595,13 @@
 					this.collapsed = true
 				} else {
 					this.collapsed = false
+				}
+			})
+			window.addEventListener('resize', () => {
+				if (window.innerWidth <= 500) {
+					this.perPage = 6
+				} else {
+					this.perPage = 12
 				}
 			})
     },
@@ -361,7 +633,7 @@
   <style lang="scss">
   .listingGrid {
 		width: 100%;
-		margin: 30px 0 43px;
+		margin: 30px 0 30px;
 
 		&__nav {
 			margin-top: 30px;
@@ -439,8 +711,28 @@
 // 500
 @include breakpoint(xs) {
   .listingGrid {
+		margin-top: 26px;
+
 		&__tagList {
 			display: none;
+		}
+
+		&__filter {
+			display: none;
+		}
+
+		&__nav {
+			flex-direction: column-reverse;
+		}
+		
+		&__pageNav {
+			width: 100%;
+			margin-bottom: 30px;
+		}
+
+		&__pageNavItem {
+			margin-right: 5px;
+			width: 15%;
 		}
 	}
 }

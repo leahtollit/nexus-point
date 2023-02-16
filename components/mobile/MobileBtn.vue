@@ -33,12 +33,11 @@ export default {
 // 960
 @include breakpoint(l) {
   .mobileBtn {
-    display: flex;
+    // display: flex;
     bottom: 40px;
     right: 40px;
     width: 72px;
     height: 72px;
-    display: flex;
     background: var(--white);
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     transition: top 0.2s ease;
