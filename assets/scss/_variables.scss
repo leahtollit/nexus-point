@@ -18,7 +18,7 @@ $purple: #7572FF;
 $purpleDark: #9b46c9;
 $green: #1cce90;
 $greenDark: #18ac78;
-$red: #ff3030;
+$red: #F87B7B;
 $redDark: #d62828;
 
 $error: $red;
@@ -68,7 +68,8 @@ $fontcolors: (
   'black': var(--black),
   'white': $white,
   'grey': $grey,
-  'purple': $purple
+  'purple': $purple,
+  'red': $red
 );
 
 $bgcolors: (

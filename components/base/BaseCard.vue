@@ -19,10 +19,28 @@
 				</button>
 			</div>
 			<p class="baseCard__subheading fs--12 fc--grey">{{ subheading }} </p>
-			<p class="baseCard__pricePerMonth"> <span>{{ price_per_month }}</span> <span>/mo (PCP)</span></p>
-			<div class="baseCard__priceCalculation flex">
-			  <p class="baseCard__price fs--12 fw--400">{{ price }}</p>
-				<button class="baseCard__calculator fs--12 fw--400 fc--purple">calculate</button>
+			<!-- if car is discounted, display new price and the view btn -->
+			<div v-if="is_discounted === true" class="baseCard__priceCalculation flex justifyC--between">
+				<div class="baseCard__col flex flex--dir-c">
+					<p class="baseCard__pricePerMonth"> <span>{{ price_per_month }}</span> <span>/mo (PCP)</span></p>
+					<div class="baseCard__priceHolder flex alignI--center">
+						<p class="baseCard__newPrice fs--12 fw--400 fc--red">{{ new_price }}</p>
+						<p class="baseCard__price baseCard__price--discounted fs--12 fw--400 fc--grey">{{ price }}</p>
+						<button class="baseCard__calculator fs--12 fw--400 fc--purple">{{ calculate_label }}</button>
+					</div>
+				</div>
+				<button v-if="has_view_btn" class="baseCard__viewBtn">
+					<p class="baseCard__btnLabel fs--16 fw--600 fc--white">View</p>
+				</button>
+
+			</div>
+			<!-- otherwise, just show the cars price -->
+			<div v-else class="baseCard__priceCalculation flex flex--dir-c">
+				<p class="baseCard__pricePerMonth"> <span>{{ price_per_month }}</span> <span>/mo (PCP)</span></p>
+				<div class="baseCard__priceHolder flex alignI--center">
+					<p class="baseCard__price fs--12 fw--400">{{ price }}</p>
+							<button class="baseCard__calculator fs--12 fw--400 fc--purple"> {{ calculate_label }}</button>
+				</div>
 			</div>
 		</div>
 		
@@ -46,6 +64,14 @@ export default {
 			type: String,
 			default: ''
 		},
+		is_discounted: {
+			type: Boolean,
+			default: false
+		},
+		new_price: {
+			type: String,
+			default: ''
+		},
 		subheading: {
 			type: String,
 			default: ''
@@ -53,6 +79,10 @@ export default {
 		advert_classification: {
 			type: String,
 			default: ''
+		},
+		has_view_btn: {
+			type: Boolean,
+			default: true
 		},
 		price_per_month: {
 			type: String,
@@ -65,6 +95,10 @@ export default {
 		tags: {
 			type: Array,
 			default: () => []
+		},
+		calculate_label: {
+			type: String,
+			default: ''
 		}
 	},
 	data() {
@@ -74,13 +108,9 @@ export default {
 	},
 	methods: {
 		favouriteOption() {
-
 			this.isFavourite = !this.isFavourite;
-
 		}
-
-      
-    },
+  },
 }
 </script>
 
@@ -99,7 +129,8 @@ export default {
 
 	&__imgHolder {
 		width: 100%;
-		height: 250px;
+		padding-bottom: 66%;
+		// height: 250px;
 	}
 
 	&__tag {
@@ -137,8 +168,16 @@ export default {
 		}
 	}
 
+	&__newPrice {
+		margin-right: 8px;
+	}
+
 	&__price {
 		line-height: 18px;
+
+		&--discounted {
+			text-decoration: line-through;
+		}
 	}
 
 	&__calculator {
@@ -149,7 +188,6 @@ export default {
 	}
 
 	&__tagHolder {
-		width: 100%;
 		bottom: 11px;
 		left: 10px;
 	}
@@ -169,6 +207,29 @@ export default {
 		&--isFavourite {
 			fill: $purple;
 			stroke: $purple;
+		}
+	}
+
+	&__viewBtn {
+		background: $purple;
+		padding: 6px 25px 7px;
+		border: 1px solid $purple;
+		border-radius: 16px;
+		transition: background 0.3s ease;
+
+		&:hover {
+			cursor: pointer;
+			background: $white;
+			
+			.baseCard__btnLabel {
+				color: $purple;
+			}
+		}
+
+		&__btnLabel {
+			line-height: 27px;
+			transition: color 0.3s ease;
+
 		}
 	}
 }

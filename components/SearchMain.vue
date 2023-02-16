@@ -1,7 +1,9 @@
 <template>
   <section class="searchMain container pos--rel">
 		<div class="searchMain__grid grid ">
+			<!-- sidebar on left with filters -->
 			<SearchSidebar class="searchMain__sidebar" />
+			<!-- main listing feed -->
 			<ListingFeed class="searchMain__listings" />
 		</div>
 	</section>

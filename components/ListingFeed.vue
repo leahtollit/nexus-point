@@ -1,14 +1,22 @@
 <template>
-    <section class="listingFeed pos--rel">
+    <section class="listingFeed pos--rel" id="listings">
+      <!-- filters above grid -->
 			<ListingType />
-			<ListingGrid />
-   
+      <!-- grid of cards -->
+			<ListingGrid :selectedTherapies="selectedTherapies"/>
+      <!-- representative section -->
+      <RepresentativeContent />
 		</Section>
   </template>
   
   <script>
   export default {
-    name: 'listingFeed'
+    name: 'listingFeed',
+    data() {
+      return {
+        selectedTherapies: [],
+      }
+    }
   }
   </script>
   
