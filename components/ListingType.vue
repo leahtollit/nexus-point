@@ -2,7 +2,7 @@
   	<section class="listingType pos--rel">
 		<div class="listingType__container flex justifyC--between alignI--center">
 			<div class="listingType__filterHolder flex alignI--center justifyC--start">
-				<h4 class="listingType__heading fs--overpass fw--700 fs--18">Showing 399 cards</h4>
+				<h4 class="listingType__heading fs--overpass fw--700 fs--18"><span>Showing</span> 399 cards</h4>
 				<ul class="listingType__tagList flex">
           			<Button v-for="(filter, i) in filters" :key="filter + i" :class="[{'listingType__tag--isSelected': selectedLabel === i}, {'listingType__tag--isNew': newLabel === i}]" class="listingType__tag flex justifyC--start alignI--center pos--rel">
                			<p class="listingType__label fs--16 fw--400 fc--grey ff--sfPro">{{ filter.label }}</p>
@@ -133,6 +133,7 @@
 			border: none;
 			padding: 13px;
 			pointer-events: all;
+			width: 100%;
 
 			&:hover {
 				cursor: pointer;
@@ -148,6 +149,8 @@
 			background: none;
 			border: none;
 			padding: 0;
+			width: 96px;
+
 		}
 
 		&__caretDown {
@@ -158,6 +161,38 @@
 			padding: 0;
 		}
   }
+
+	//----------------------------------------//
+	// 1080
+	@include breakpoint(xl) {
+		.listingType {
+
+			&__heading {
+				margin-right: 30px;
+				span {
+					display: none;
+				}
+			}
+
+			&__tag {
+				margin-right: 5px;
+			}
+
+			&__dropdownHolder {
+				max-width: 150px;
+			}
+		}
+	}
+
+	//----------------------------------------//
+	// 750
+	@include breakpoint(m) {
+		.listingType {
+			&__tagList {
+				display: none;
+			}
+		}
+	}
 
 	//----------------------------------------//
 	// 500

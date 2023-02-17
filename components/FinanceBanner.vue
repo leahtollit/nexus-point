@@ -20,7 +20,7 @@
 
 //----------------------------------------//
 // 960
-@include breakpoint(l) {
+@include breakpoint(xl) {
   .financeBanner {
 		display: none;
 	}

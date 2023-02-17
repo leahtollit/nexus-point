@@ -42,7 +42,7 @@
 
 	//----------------------------------------//
 	// 960
-	@include breakpoint(l) {
+	@include breakpoint(xl) {
 		.searchMain {
 
 			&__grid {
