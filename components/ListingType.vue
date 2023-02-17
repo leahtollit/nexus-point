@@ -1,83 +1,86 @@
 <template>
-  <section class="listingType pos--rel">
+  	<section class="listingType pos--rel">
 		<div class="listingType__container flex justifyC--between alignI--center">
 			<div class="listingType__filterHolder flex alignI--center justifyC--start">
-				<h4 class="listingType__heading">Showing 399 cards</h4>
+				<h4 class="listingType__heading fs--overpass fw--700 fs--18">Showing 399 cards</h4>
 				<ul class="listingType__tagList flex">
-          <Button
-					  v-for="(filter, i) in filters" :key="filter + i"
-							:class="[{
-              'listingType__tag--isSelected': selectedLabel === i
-          }, {
-              'listingType__tag--isNew': newLabel === i
-            }]"
-						@onSelect="selectType"
-
-              class="listingType__tag flex justifyC--start alignI--center pos--rel">
-               <p class="listingType__label fs--24 fc--grey">{{ filter.label }}</p>
+          			<Button v-for="(filter, i) in filters" :key="filter + i" :class="[{'listingType__tag--isSelected': selectedLabel === i}, {'listingType__tag--isNew': newLabel === i}]" class="listingType__tag flex justifyC--start alignI--center pos--rel">
+               			<p class="listingType__label fs--16 fw--400 fc--grey ff--sfPro">{{ filter.label }}</p>
 					</Button>
-        </ul>
+        		</ul>
 			</div>
-			<button class="listingType__filter flex alignI--center">
-				<p class="listingType__filterLabel fs--16 fw--400 fc--grey">Lowest Price</p>
-				<CaretIconDown class="listingGrid__caretDown"/>
-			</button>
+			<div class="listingType__dropdownHolder">
+				<button class="listingType__filter flex alignI--center" @click.prevent="toggleDropdown()">
+					<input class="listingType__filterLabel fs--16 fw--400 fc--grey ff--sfPro" :placeholder="'Lowest Price'" :value="currentInput"/>
+					<CaretIconDown class="listingType__caretDown"/>
+				</button>
+				<BaseDropdown :dropdownItems="dropdownItems" :class="{ 'baseDropdown--open': isDropdownOpen === true }"/>
+			</div>
 		</div>
 	</section>
 </template>
   
-  <script>
+<script>
 	import CaretIconDown from '~/assets/svgs/interface/caret-down.svg?inline'
   export default {
-    name: 'ListingType',
-		components: {
-			CaretIconDown
-		},
-		data() {
-			return {
-				selectedLabel: 0,
-				newLabel: 2,
-				filters: [
-          {
-            label: 'All'
-          },
-          {
-            label: 'Used'
-          },
-          {
-            label: 'New'
-				  },
-				  {
-            label: 'Offers'
-				  }
-			  ]
-			}
-		},
-		methods: {
-				selectType(filter) {
-				this.selectedFilter = []
-				filter.forEach((el) => {
-					this.selectedFilter.push(el.slug)
-				})
-				this.$emit('onSelect', filter)
-			},
+  name: 'ListingType',
+	components: {
+		CaretIconDown
+	},
+	data() {
+		return {
+			isDropdownOpen: false,
+			selectedLabel: 0,
+			currentInput:'',
+			newLabel: 2,
+			filters: [
+				{
+					label: 'All'
+				},
+				{
+					label: 'Used'
+				},
+				{
+					label: 'New'
+				},
+				{
+					label: 'Offers'
+				}
+			],
+			dropdownItems: [
+				{
+					label: 'Lowest Price'
+				},
+				{
+					label: 'Highest Price'
+				},
+				{
+					label: 'Whats New'
+				}
+			]
+		}
+	},
+	methods: {
+		toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen
+    }
 	}
-    
-  }
-  </script>
+}
+</script>
   
-  <style lang="scss">
+<style lang="scss">
   .listingType {
 		width: 100%;
 
 		&__heading {
 			margin-right: 30px;
+			line-height: 24px;
 		}
 
 		&__tag {
 			border: 1px solid #D1D6E0;
 			background: none;
-      border-radius: 12px;
+     	border-radius: 12px;
       padding: 3px 25px;
 			margin-right: 10px;
 			transition: background 0.3s ease, border 0.3s ease;
@@ -91,9 +94,9 @@
 				border: 1px solid $purple;
 
 
-        .listingType__label {
-          color: $white;
-        }
+				.listingType__label {
+					color: $white;
+				}
       }
 
 			&:hover {
@@ -103,18 +106,17 @@
 
 				.listingType__label {
           color: $white;
-        }
+        }		
 			}
 
 
 			&--isNew {
 				background: none;
-			  border: 1px solid $black;
+			  	border: 1px solid $black;
 
-
-        .listingType__label {
-          color: $black;
-        }
+				.listingType__label {
+					color: $black;
+				}
 				
       }
 
@@ -130,11 +132,26 @@
 			border-radius: 16px;
 			border: none;
 			padding: 13px;
+			pointer-events: all;
+
+			&:hover {
+				cursor: pointer;
+				.listingType__caretDown {
+					transform: translateY(2px);
+				}
+			}
 		}
 
 		&__filterLabel {
 			line-height: 24px;
 			margin-right: 14px;
+			background: none;
+			border: none;
+			padding: 0;
+		}
+
+		&__caretDown {
+			transition: transform 0.3s ease;
 		}
 
 		&__tagList {
@@ -143,30 +160,31 @@
   }
 
 	//----------------------------------------//
-// 500
-@include breakpoint(xs) {
-  .listingType {
-		&__tagList {
-			display: none;
-		}
+	// 500
+	@include breakpoint(xs) {
+		.listingType {
+			&__tagList {
+				display: none;
+			}
 
-		&__heading {
-			font-weight: 400;
-			font-size: 14px;
-			line-height: 21px;
-		}
+			&__heading {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+			}
 
-		&__filter {
-			background: none;
-			padding: 0;
-		}
+			&__filter {
+				background: none;
+				padding: 0;
+			}
 
-		&__filterLabel {
-			color: $black;
-			font-size: 14px;
-			line-height: 21px;
+			&__filterLabel {
+				color: $black;
+				font-size: 14px;
+				line-height: 21px;
+				max-width: 84px;
+			}
 		}
 	}
-}
-  </style>
+</style>
   

@@ -1,6 +1,6 @@
 <template>
   <div class="baseTag pos--rel">
-    <p class="baseTag__label fs--16 fw--600 fc--white"><slot /></p>
+    <p class="baseTag__label fs--16 fw--600 ff--overpass fc--white"><slot /></p>
   </div>
 </template>
   

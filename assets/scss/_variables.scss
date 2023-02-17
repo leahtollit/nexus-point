@@ -8,7 +8,7 @@ $greyDark: #424247;
 $grey:  #55595D;
 $greyLight: #8e8e91;
 $greyLighter: #F6F7FB;
-$greyLightest: #e2e2e6;
+$greyLightest: #A2A9AF;
 
 $orange: #ffa700;
 $orangeDark: #d88e01;
@@ -68,6 +68,7 @@ $fontcolors: (
   'black': var(--black),
   'white': $white,
   'grey': $grey,
+  'greyLightest': $greyLightest,
   'purple': $purple,
   'red': $red
 );
@@ -97,16 +98,20 @@ $containerPadding: (
 /* ---------------------------------------- */
 
 // fonts
- 
+
 $sans: 'Arial', sans-serif;
 $serif: 'Times New Roman', serif;
+$overpass: 'Overpass', sans-serif;
+$sfPro : 'SF Pro Display', sans-serif;
 
 $fontFamilies: (
   'sans': $sans,
   'serif': $serif,
+  'overpass': $overpass,
+  'sfPro': $sfPro
 );
 
-$fontSizes: (12, 14, 16, 18, 20);
+$fontSizes: (12, 14, 16, 18, 20, 24);
 $fontWeights: (300, 600, 700);
 $lineHeights: (120, 140, 150, 160, 180);
 $letterSpacing: (

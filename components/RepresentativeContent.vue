@@ -2,9 +2,9 @@
   <section class="representativeContent pos--rel">
 		<div class="representativeContent__container">
 			<div class="representativeContent__body flex">
-				<p class="representativeContent__copy fc--black fs--16"><span>Representative example:</span> <span>Borrowing £11,790.00 over 4 years with a representative APR of 7.9 %, an annual interest rate of 4.08 % (Fixed) and a deposit of £500.00, the amount payable would be £273.59 per month, with a total cost of credit of £1,843.32 and a total amount payable of £13,633.32.</span></p>
+				<p class="representativeContent__copy fc--black fs--16 ff--sfPro fw--700"><span>Representative example:</span> <span>Borrowing £11,790.00 over 4 years with a representative APR of 7.9 %, an annual interest rate of 4.08 % (Fixed) and a deposit of £500.00, the amount payable would be £273.59 per month, with a total cost of credit of £1,843.32 and a total amount payable of £13,633.32.</span></p>
 				<div class="representativeContent__btn flex alignI--center">
-					<p class="representativeContent__btnLabel fc--grey fs--16 fw--400" ref="buttonLabel">Hide breakdown</p>
+					<p class="representativeContent__btnLabel fc--grey fs--16 fw--400 ff--sfPro" ref="buttonLabel">Hide breakdown</p>
 					<button class="representativeContent__dropdownBtn flex justifyC--center alignI--center">
 						<CaretIconUp class="representativeContent__caret"/>
 					</button>
@@ -12,23 +12,19 @@
 			</div>
 			<div class="representativeContent__tabs">
 				<ul class="representativeContent__tabList flex justifyC--between">
-          <BaseTabs
-					  v-for="(tab, i) in tabs" :key="tab + i"
-              class="representativeContent__tab flex pos--rel"> {{ tab.name }}
-					</BaseTabs>
+          <BaseTabs v-for="(tab, i) in tabs" :key="tab + i" class="representativeContent__tab flex pos--rel"> {{ tab.name }} </BaseTabs>
         </ul>
 				<div class="representativeContent__tabContent flex">
 					<ul class="representativeContent__tabList flex justifyC--between">
 						<div
 							v-for="(el, i) in personal_contract" :key="el + i"
 								class="representativeContent__item flex pos--rel flex--dir-c justifyC--center alignI--center"> 
-								<p class="representativeContent__heading fs--16 fw--400 fc--grey"> {{ el.heading }}</p>
-								<p class="representativeContent_value fs--18 fw--700 fc--black"> {{ el.value }}</p>
+								<p class="representativeContent__heading fs--16 fw--400 fc--grey ff--sfPro"> {{ el.heading }}</p>
+								<p class="representativeContent_value fs--18 fw--700 fc--black ff--overpass"> {{ el.value }}</p>
 						</div>
-        </ul>
+          </ul>
 				</div>
 			</div>
-	
 		</div>
 	</section>
 </template>
@@ -121,11 +117,14 @@
 			max-width: 781px;
 			width: calc(100% - 234px);
 			margin-right: 15px;
+			font-family: "SF Pro Text, sans-serif";
 			span {
 				font-weight: 700;
+				font-family: $sfPro;
 
 				&:nth-last-child(1) {
 					font-weight: 400;
+					font-family: $sfPro;
 				}
 			}
 		}
@@ -135,6 +134,7 @@
 			border-radius: 16px;
 			border: none;
 			padding: 24px 24px 24px 13px;
+			max-height: 72px;
 		}
 
 		&__btnLabel {
@@ -188,7 +188,7 @@
   }
 	//----------------------------------------//
   // 1080
-@include breakpoint(xl) {
+	@include breakpoint(xl) {
   .representativeContent {
 
 		&__tabs {
@@ -209,6 +209,11 @@
 
 		&__btn {
 			justify-content: space-between;
+			padding: 12px 13px;
+		}
+
+		&__btnLabel {
+			font-weight: 600;
 		}
 
 		&__caret {

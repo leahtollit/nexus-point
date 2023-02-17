@@ -1,12 +1,12 @@
 <template>
-    <section class="listingFeed pos--rel" id="listings">
-      <!-- filters above grid -->
-			<ListingType />
-      <!-- grid of cards -->
-			<ListingGrid :selectedTherapies="selectedTherapies"/>
-      <!-- representative section -->
-      <RepresentativeContent />
-		</Section>
+  <section class="listingFeed pos--rel" id="listings">
+    <!-- filters above grid -->
+		<ListingType />
+    <!-- grid of cards -->
+		<ListingGrid :selectedTherapies="selectedTherapies"/>
+    <!-- representative section -->
+    <RepresentativeContent />
+	</Section>
   </template>
   
   <script>

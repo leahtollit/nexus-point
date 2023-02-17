@@ -1,22 +1,22 @@
 <template>
-    <div class="searchSidebar pos--sticky">
+  <div class="searchSidebar pos--sticky">
    
-    </div>
-  </template>
+  </div>
+</template>
   
-  <script>
+<script>
   export default {
     name: 'SearchSidebar'
   }
-  </script>
+</script>
   
-  <style lang="scss">
+<style lang="scss">
   .searchSidebar {
-		background: var(--greyLighter);
-		width: 298px;
+    background: var(--greyLighter);
+    width: 298px;
     height: 100%;
     top: 0;
 
   }
-  </style>
+</style>
   

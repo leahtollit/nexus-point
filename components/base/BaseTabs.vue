@@ -1,13 +1,12 @@
 <template>
-    <div class="baseTabs">
-      <button
-        class="baseTabs__tab buttonReset" :class="{ active: activeTab === i }"  @click="changeTab(i)">
-        <p class="baseTabs__label"><slot/></p>
+  <div class="baseTabs">
+      <button class="baseTabs__tab buttonReset" :class="{ active: activeTab === i }"  @click="changeTab(i)">
+        <p class="baseTabs__label ff--sfPro fs--14 fc--grey fw--400"><slot/></p>
       </button>
-    </div>
-  </template>
+  </div>
+</template>
   
-  <script>
+<script>
   export default {
     name: 'BaseTabs',
     props: {
@@ -33,9 +32,9 @@
       }
     }
   }
-  </script>
+</script>
   
-  <style lang="scss">
+<style lang="scss">
   .baseTabs {
     &__tab {
       width: 100%;
@@ -47,6 +46,10 @@
         border-bottom: 3px solid $purple;
       }
     }
+
+    &__label {
+      line-height: 21px;
+    }
   }
-  </style>
+</style>
   

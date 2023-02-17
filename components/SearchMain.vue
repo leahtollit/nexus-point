@@ -40,30 +40,30 @@
 		}
   }
 
-//----------------------------------------//
-// 960
-@include breakpoint(l) {
-  .searchMain {
+	//----------------------------------------//
+	// 960
+	@include breakpoint(l) {
+		.searchMain {
 
-		&__grid {
-	    column-gap: 0;
-		  grid-template-areas: 
-			  "listing";
+			&__grid {
+				column-gap: 0;
+				grid-template-areas: 
+					"listing";
+			}
+
+			&__sidebar {
+				display: none;
+			}
+			
 		}
+	}
 
-		&__sidebar {
-			display: none;
+	//----------------------------------------//
+	// 500
+	@include breakpoint(xs) {
+		.searchMain {
+			margin-bottom: 30px;
 		}
-		
 	}
-}
-
-//----------------------------------------//
-// 500
-@include breakpoint(xs) {
-  .searchMain {
-		margin-bottom: 30px;
-	}
-}
 </style>
   

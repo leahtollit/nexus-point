@@ -1,6 +1,6 @@
 <template>
 	<div class="baseLabel pos--rel">
-		<p class="baseLabel__label fs--12 fw--400 fc--white"><slot /></p>
+		<p class="baseLabel__label fs--12 ff--sfPro fw--400 fc--white"><slot /></p>
 	</div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
 	border-radius: 8px;
 	padding: 1px 10px;
 	margin-right: 5px;
+	margin-bottom: 5px;
 	pointer-events: none;
 
 	&:nth-last-child(1) {

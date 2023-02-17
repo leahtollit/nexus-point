@@ -55,12 +55,12 @@
   }
   </script>
   
-  <style lang="scss">
+<style lang="scss">
   .sliderGallery {
     width: 100%;
     overflow: visible;
     height: 84px;
-    //
+    
     &__slider {
       flex-wrap: nowrap;
       align-content: flex-start;
@@ -91,8 +91,6 @@
       border-radius: 16px;
     }
   
-
-  
   }
-  </style>
+</style>
   
